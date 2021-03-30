@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/', function () {
     return view('welcome');
-})->name('welcome');;
+})->name('welcome');
 
 
 Route::get('/dashboard', function () {return view('dashboard');})->middleware(['auth'])->name('dashboard');
@@ -24,4 +24,4 @@ Route::get('/location', function () {return view('location');})->middleware(['au
 
 
 
-Route::post('/', function () {return view('logout');})->name('logout');;
+Route::post('/', function () {return view('logout');})->name('logout');
