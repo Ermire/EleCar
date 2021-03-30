@@ -38,13 +38,9 @@
                 </label>
             </div>
             <div class="flex items-center justify-end mt-4">
-                <x-button href="{{ route('register') }}" class="ml-3">
-                    {{ __('Inscription') }}
-                </x-button>
                 <x-button class="ml-3">
                     {{ __('Connexion') }}
                 </x-button>
-                
             </div>
         </form>
     </x-auth-card>
