@@ -47,7 +47,7 @@ class LoginRequest extends FormRequest
         error_log("marcelo");
         $this->ensureIsNotRateLimited();
         error_log("ça passe la");
-        if (! Auth::attempt($this->only('utilisateurEmail', Hash::make($this->utilisateurMdp)), $this->filled('remember'))) {
+        if (! Auth::attempt($this->only('utilisateurEmail', 'utilisateurMdp'), $this->filled('remember'))) {
             RateLimiter::hit($this->throttleKey());
             error_log('kebab');
             error_log(Hash::make($this->utilisateurMdp));
