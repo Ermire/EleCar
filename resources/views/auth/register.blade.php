@@ -1,9 +1,7 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+            <img class="logoRegister" src="{{ asset('img/logo.png') }}">
         </x-slot>
 
         <!-- Validation Errors -->
@@ -61,11 +59,11 @@
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Déjà enregistré ?') }}
+                    {{ __('Déjà inscrit ?') }}
                 </a>
 
                 <x-button class="ml-4">
-                    {{ __('Enregistrer') }}
+                    {{ __('Inscription') }}
                 </x-button>
             </div>
         </form>
