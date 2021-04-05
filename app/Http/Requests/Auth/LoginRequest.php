@@ -6,7 +6,6 @@ use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 
@@ -31,7 +30,7 @@ class LoginRequest extends FormRequest
     {
         return [
             'utilisateurEmail' => 'required|string|email',
-            'utilisateurMdp' => 'required|string',
+            'password' => 'required|string',
         ];
     }
 
@@ -44,18 +43,16 @@ class LoginRequest extends FormRequest
      */
     public function authenticate()
     {
-        error_log("marcelo");
         $this->ensureIsNotRateLimited();
-        error_log("ça passe la");
-        if (! Auth::attempt($this->only('utilisateurEmail', 'utilisateurMdp'), $this->filled('remember'))) {
+
+        if (! Auth::attempt($this->only('utilisateurEmail', 'password'), $this->filled('remember'))) {
             RateLimiter::hit($this->throttleKey());
-            error_log('kebab');
-            error_log(Hash::make($this->utilisateurMdp));
+
             throw ValidationException::withMessages([
                 'utilisateurEmail' => __('auth.failed'),
             ]);
         }
-        error_log("ça passe ici");
+
         RateLimiter::clear($this->throttleKey());
     }
 
