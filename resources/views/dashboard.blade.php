@@ -18,9 +18,9 @@
         <table>
             @foreach ($listCar as $voiture)
                 &nbsp;
-                <tr>{{ $voiture->vehiculeId}}</tr>
+                <tr>{{$voiture->vehiculeId}}</tr>
                 &nbsp; 
-                <tr>{{ $voiture->vehiculeModele}}</tr>
+                <tr>{{$voiture->vehiculeModele}}</tr>
             @endforeach  
         </table>      
     </div>    
