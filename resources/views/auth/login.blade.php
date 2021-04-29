@@ -36,7 +36,7 @@
                  <x-button class="ml-3">
                      {{ __('Connexion') }}
                  </x-button>
-                </div>
+            </div>
          </form>
      </x-auth-card>
  </x-guest-layout>

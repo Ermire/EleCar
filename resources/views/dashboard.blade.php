@@ -16,11 +16,21 @@
     </div>
     <div class="container">
         <table>
+
             @foreach ($listCar as $voiture)
                 &nbsp;
-                <tr>{{$voiture->vehiculeId}}</tr>
-                &nbsp; 
-                <tr>{{$voiture->vehiculeModele}}</tr>
+                <form method="GET" action="{{ route('detail') }}">
+                    @csrf
+                    <tr>{{$voiture->vehiculeId}}</tr>
+                    &nbsp; 
+                    <tr>{{$voiture->vehiculeModele}}</tr>
+                    <br>
+                    <div class="flex items-center mt-4">
+                    <x-button class="ml-3">
+                            {{ __('Détail') }}
+                    </x-button>
+                </div>
+
             @endforeach  
         </table>      
     </div>    

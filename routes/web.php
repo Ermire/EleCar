@@ -18,4 +18,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 Route::get('/dashboard', 'App\Http\Controllers\Controller@index')->name('dashboard');
 
+Route::get('/detail', function () {
+    return view('detail');
+})->middleware(['auth'])->name('detail');
+Route::get('/detail', 'App\Http\Controllers\ShowCarController@index')->name('detail');
+
 require __DIR__.'/auth.php';
