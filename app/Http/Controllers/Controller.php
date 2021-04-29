@@ -7,6 +7,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use App\Models\Car;
+use App\Models\Marque;
 
 class Controller extends BaseController
 {
@@ -15,7 +16,8 @@ class Controller extends BaseController
     public function index(){
         $car = new Car();
 
-        $listCar = $car->getCar();  
+        $listCar = $car->getCar();
         return view('dashboard')->with('listCar',$listCar);
+
     }
 }
