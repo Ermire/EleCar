@@ -14,4 +14,14 @@
             </div>
         </div>
     </div>
+    <div class="container">
+        <table>
+            @foreach ($listCar as $voiture)
+                &nbsp;
+                <tr>{{ $voiture->vehiculeId}}</tr>
+                &nbsp; 
+                <tr>{{ $voiture->vehiculeModele}}</tr>
+            @endforeach  
+        </table>      
+    </div>    
 </x-app-layout>
