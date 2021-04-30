@@ -25,7 +25,7 @@
                     &nbsp;
                     <tr>{{ $voiture->vehiculeModele }}</tr>
                     <br>
-                    <img src="img/{{ $voiture->vehiculeImage }}">
+                    <img class="imgCard" src="img/{{ $voiture->vehiculeImage }}">
                     <div class="flex items-center mt-4">
                         <x-button class="ml-3">
                             {{ __('Détail') }}
