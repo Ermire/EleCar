@@ -18,15 +18,13 @@
             <div class="card-body">
                 @foreach ($listCar as $voiture)
                 <img class="imgCard" src="img/{{ $voiture->vehiculeImage }}">
+                <hr>
                     &nbsp;
-<<<<<<< HEAD
                     @csrf
                     <form method="GET" action="{{ route('detail') }}">
-                        <tr>{{ $voiture->vehiculeId }}</tr>
-                        &nbsp;
                         <tr>{{ $voiture->vehiculeModele }}</tr>
                         <br>
-                        <div class="flex items-center mt-4">
+                        <div class="flex items-center justify-center mt-4">
                             <x-button class="ml-3">
                                 {{ __('Détail') }}
                             </x-button>
@@ -35,18 +33,5 @@
                 @endforeach
             </div>
         </div>
-=======
-                    <tr>{{ $voiture->vehiculeModele }}</tr>
-                    <br>
-                    <img class="imgCard" src="img/{{ $voiture->vehiculeImage }}">
-                    <div class="flex items-center mt-4">
-                        <input class="ml-3" type="submit" value="{{ __('Détail') }}">
-                       
-                    </div>
-                    <input type="hidden" name="id" value="{{ $voiture->vehiculeId }}">
-                </form>
-            @endforeach
-        </table>
->>>>>>> 0ca2072b3dd17e4baf7b888f29f5c2888365b511
     </div>
 </x-app-layout>
