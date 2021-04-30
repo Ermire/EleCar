@@ -26,8 +26,8 @@ class Controller extends BaseController
         $car = new Car();
 
         $id = $request->input('id');
-        
-        $listCar = $car->getCarDetail($id);
-        return view('detail')->with('listCar', $listCar);
+
+        $oneCar = $car->getCarDetail($id);
+        return view('detail')->with('oneCar', $oneCar);
     }
 }
