@@ -19,13 +19,14 @@
             @foreach ($listCar as $voiture)
                 <img class="imgCard" src="img/{{ $voiture->vehiculeImage }}">
                 <hr>
-                &nbsp;
                 @csrf
                 <form method="GET" action="{{ route('detail') }}">
-                    <tr>{{ $voiture->vehiculeModele }}</tr>
-                    <br>
+                    <p class="titleDetail"><span class="bold">Modèle : </span>{{ $voiture->vehiculeModele }}</p>
+                    <p class="titleDetail"><span class="bold">Année : </span>{{ $voiture->vehiculeAnnee }}</p>
+                    <p class="titleDetail"><span class="bold">Kilométrage : </span>{{ $voiture->vehiculeKm }} km</p>
+                    <p class="titleDetail"><span class="bold">Prix location : </span>{{ $voiture->vehiculePrixLoc }} €</p>
                     <div class="flex items-center justify-center mt-4">
-                        <input class="ml-3" type="submit" value="{{ __('Détail') }}">
+                        <input class="buttonDetail" type="submit" value="{{ __('Détail') }}">
                         <input type="hidden" name="id" value="{{ $voiture->vehiculeId }}">
                     </div>
                 </form>
