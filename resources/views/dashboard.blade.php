@@ -15,7 +15,6 @@
         </div>
     </div>
         <div class="card">
-       
             <div class="card-body">
                 @foreach ($listCar as $voiture)
                 <img class="imgCard" src="img/{{ $voiture->vehiculeImage }}">
