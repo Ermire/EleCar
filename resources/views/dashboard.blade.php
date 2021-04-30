@@ -27,10 +27,10 @@
                     <br>
                     <img src="img/{{ $voiture->vehiculeImage }}">
                     <div class="flex items-center mt-4">
-                        <x-button class="ml-3">
-                            {{ __('Détail') }}
-                        </x-button>
+                        <input class="ml-3" type="submit" value="{{ __('Détail') }}">
+                       
                     </div>
+                    <input type="hidden" name="id" value="{{ $voiture->vehiculeId }}">
                 </form>
             @endforeach
         </table>
