@@ -14,9 +14,10 @@
             </div>
         </div>
     </div>
+    @foreach ($listCar as $voiture)
     <div class="card">
         <div class="card-body">
-            @foreach ($listCar as $voiture)
+           
                 <img class="imgCard" src="img/{{ $voiture->vehiculeImage }}">
                 <hr>
                 @csrf
@@ -30,7 +31,8 @@
                         <input type="hidden" name="id" value="{{ $voiture->vehiculeId }}">
                     </div>
                 </form>
-            @endforeach
+         
         </div>
     </div>
+    @endforeach
 </x-app-layout>
