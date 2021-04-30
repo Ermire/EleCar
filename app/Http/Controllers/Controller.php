@@ -30,4 +30,9 @@ class Controller extends BaseController
         $oneCar = $car->getCarDetail($id);
         return view('detail')->with('oneCar', $oneCar);
     }
+
+    public function locateCar()
+    {
+        
+    }
 }

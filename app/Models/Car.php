@@ -31,4 +31,9 @@ class Car extends Model
             ->where('vehiculeId', '=', $id );
         return $car->get();
     }
+
+    public function bookingCar($idVoiture, $idUtilisateur)
+    {
+        $booking = DB::insert('insert into location (utilisateur_idUtilisateur, vehicule_idVehicule) values ('.$idVoiture.', '.$idUtilisateur.')', [1, 'Dayle']);
+    }
 }
