@@ -14,38 +14,25 @@
             </div>
         </div>
     </div>
-        <div class="card">
-            <div class="card-body">
-                @foreach ($listCar as $voiture)
+    <div class="card">
+        <div class="card-body">
+            @foreach ($listCar as $voiture)
                 <img class="imgCard" src="img/{{ $voiture->vehiculeImage }}">
+                &nbsp;
+                @csrf
+                <form method="GET" action="{{ route('detail') }}">
+                    <tr>{{ $voiture->vehiculeId }}</tr>
                     &nbsp;
-<<<<<<< HEAD
-                    @csrf
-                    <form method="GET" action="{{ route('detail') }}">
-                        <tr>{{ $voiture->vehiculeId }}</tr>
-                        &nbsp;
-                        <tr>{{ $voiture->vehiculeModele }}</tr>
-                        <br>
-                        <div class="flex items-center mt-4">
-                            <x-button class="ml-3">
-                                {{ __('Détail') }}
-                            </x-button>
-                        </div>
-                    </form>
-                @endforeach
-            </div>
-        </div>
-=======
                     <tr>{{ $voiture->vehiculeModele }}</tr>
                     <br>
-                    <img class="imgCard" src="img/{{ $voiture->vehiculeImage }}">
                     <div class="flex items-center mt-4">
-                        <input class="ml-3" type="submit" value="{{ __('Détail') }}">
+                        <x-button class="ml-3">
+                            {{ __('Détail') }}
+                        </x-button>
                     </div>
-                    <input type="hidden" name="id" value="{{ $voiture->vehiculeId }}">
                 </form>
             @endforeach
-        </table>
->>>>>>> 0ca2072b3dd17e4baf7b888f29f5c2888365b511
+        </div>
+    </div>
     </div>
 </x-app-layout>
