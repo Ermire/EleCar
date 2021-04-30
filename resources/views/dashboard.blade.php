@@ -19,6 +19,7 @@
                 @foreach ($listCar as $voiture)
                 <img class="imgCard" src="img/{{ $voiture->vehiculeImage }}">
                     &nbsp;
+<<<<<<< HEAD
                     @csrf
                     <form method="GET" action="{{ route('detail') }}">
                         <tr>{{ $voiture->vehiculeId }}</tr>
@@ -34,5 +35,18 @@
                 @endforeach
             </div>
         </div>
+=======
+                    <tr>{{ $voiture->vehiculeModele }}</tr>
+                    <br>
+                    <img class="imgCard" src="img/{{ $voiture->vehiculeImage }}">
+                    <div class="flex items-center mt-4">
+                        <input class="ml-3" type="submit" value="{{ __('Détail') }}">
+                       
+                    </div>
+                    <input type="hidden" name="id" value="{{ $voiture->vehiculeId }}">
+                </form>
+            @endforeach
+        </table>
+>>>>>>> 0ca2072b3dd17e4baf7b888f29f5c2888365b511
     </div>
 </x-app-layout>

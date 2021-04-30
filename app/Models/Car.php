@@ -20,4 +20,15 @@ class Car extends Model
             ->select('*');
         return $car->get();
     }
+
+    public function getCarDetail($id)
+    {
+        $car = DB::table('vehicule')
+            ->join('marque', 'vehicule.marque_IdMarque', '=', 'marque.marqueId')
+            ->join('typevehicule', 'vehicule.typeVehicule_idtypeVehicule', '=', 'typevehicule.idtypeVehicule')
+            ->join('classe', 'vehicule.classe_IdClasse', '=', 'classe.classeId')
+            ->select('*')
+            ->where('vehiculeId', '=', $id );
+        return $car->get();
+    }
 }
