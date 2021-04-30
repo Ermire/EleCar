@@ -14,25 +14,26 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <table>
-
-            @foreach ($listCar as $voiture)
-                &nbsp;
-                @csrf
-                <form method="GET" action="{{ route('detail') }}">
-                    <tr>{{ $voiture->vehiculeId }}</tr>
+        <div class="card">
+       
+            <div class="card-body">
+                @foreach ($listCar as $voiture)
+                <img class="imgCard" src="img/{{ $voiture->vehiculeImage }}">
                     &nbsp;
-                    <tr>{{ $voiture->vehiculeModele }}</tr>
-                    <br>
-                    <img class="imgCard" src="img/{{ $voiture->vehiculeImage }}">
-                    <div class="flex items-center mt-4">
-                        <x-button class="ml-3">
-                            {{ __('Détail') }}
-                        </x-button>
-                    </div>
-                </form>
-            @endforeach
-        </table>
+                    @csrf
+                    <form method="GET" action="{{ route('detail') }}">
+                        <tr>{{ $voiture->vehiculeId }}</tr>
+                        &nbsp;
+                        <tr>{{ $voiture->vehiculeModele }}</tr>
+                        <br>
+                        <div class="flex items-center mt-4">
+                            <x-button class="ml-3">
+                                {{ __('Détail') }}
+                            </x-button>
+                        </div>
+                    </form>
+                @endforeach
+            </div>
+        </div>
     </div>
 </x-app-layout>
