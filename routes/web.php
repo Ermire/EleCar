@@ -23,4 +23,4 @@ Route::get('/detail', function () {
 })->middleware(['auth'])->name('detail');
 Route::get('/detail', 'App\Http\Controllers\ShowCarController@index')->name('detail');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

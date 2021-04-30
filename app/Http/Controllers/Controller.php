@@ -12,11 +12,11 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function index(){
+    public function index()
+    {
         $car = new Car();
 
         $listCar = $car->getCar();
-        return view('dashboard')->with('listCar',$listCar);
-
+        return view('dashboard')->with('listCar', $listCar);
     }
 }

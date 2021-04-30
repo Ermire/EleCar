@@ -19,20 +19,20 @@
 
             @foreach ($listCar as $voiture)
                 &nbsp;
+                @csrf
                 <form method="GET" action="{{ route('detail') }}">
-                    @csrf
-                    <tr>{{$voiture->vehiculeId}}</tr>
-                    &nbsp; 
-                    <tr>{{$voiture->vehiculeModele}}</tr>
+                    <tr>{{ $voiture->vehiculeId }}</tr>
+                    &nbsp;
+                    <tr>{{ $voiture->vehiculeModele }}</tr>
                     <br>
-                    <img src="img/{{$voiture->vehiculeImage}}" >
+                    <img src="img/{{ $voiture->vehiculeImage }}">
                     <div class="flex items-center mt-4">
-                    <x-button class="ml-3">
+                        <x-button class="ml-3">
                             {{ __('Détail') }}
-                    </x-button>
-                </div>
-
-            @endforeach  
-        </table>      
-    </div>    
+                        </x-button>
+                    </div>
+                </form>
+            @endforeach
+        </table>
+    </div>
 </x-app-layout>
