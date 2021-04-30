@@ -8,15 +8,15 @@ use App\Models\Car;
 class ShowCarController extends Controller
 {
 
-    public function index(){
+    public function index()
+    {
         $car = new Car();
 
         $listCar = $car->getCar();
-        return view('detail')->with('listCar',$listCar);
+        return view('detail')->with('listCar', $listCar);
     }
 
     public function showDetailCar()
     {
-
     }
 }
