@@ -2,7 +2,7 @@
     <div>
         <p>Detail de vago</p>
         @foreach ($oneCar as $voiture)
-            <p> Maque de la voiture : {{ $voiture->marqueLibelle }}</p>
+            <p> Marque de la voiture : {{ $voiture->marqueLibelle }}</p>
         @endforeach
     </div>
 </x-app-layout>
