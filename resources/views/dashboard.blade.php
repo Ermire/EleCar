@@ -4,7 +4,6 @@
             {{ __('Tableau de bord') }}
         </h2>
     </x-slot>
-
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -14,10 +13,10 @@
             </div>
         </div>
     </div>
+    <div class="carBlock">
     @foreach ($listCar as $voiture)
-    <div class="card">
-        <div class="card-body">
-           
+        <div class="card">
+            <div class="card-body">
                 <img class="imgCard" src="img/{{ $voiture->vehiculeImage }}">
                 <hr>
                 @csrf
@@ -31,8 +30,8 @@
                         <input type="hidden" name="id" value="{{ $voiture->vehiculeId }}">
                     </div>
                 </form>
-         
+            </div>
         </div>
-    </div>
     @endforeach
+    </div>
 </x-app-layout>

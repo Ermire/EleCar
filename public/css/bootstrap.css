@@ -4574,15 +4574,17 @@ fieldset:disabled .btn {
 }
 
 .card {
+    border-radius: 1.5rem;
     position: relative;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-direction: column;
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
     box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.384);
-    border-radius: 1.5rem;
 }
 
 .card>hr {
