@@ -35,6 +35,14 @@
             {{ $slot }}
         </main>
     </div>
+     <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgb(255, 255, 255);">
+    ©2021 Copyright
+    <a class="text-dark" href="https://mdbootstrap.com/">EleCars</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
 </body>
 
 </html>
