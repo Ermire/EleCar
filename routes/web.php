@@ -18,6 +18,12 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 Route::get('/dashboard', 'App\Http\Controllers\Controller@index')->name('dashboard');
 
+
+Route::get('/account', function () {
+    return view('account');
+})->middleware(['auth'])->name('account');
+
+
 Route::get('/offre', function () {
     return view('offre');
 })->middleware(['auth'])->name('offre');

@@ -37,7 +37,6 @@
     </div>
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgb(255, 255, 255);">
-
         <a class="text-dark">©2021 Copyright EleCars</a>
     </div>
     <!-- Copyright -->
