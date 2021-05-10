@@ -42,7 +42,7 @@ class Controller extends BaseController
         $contrat = $request->input('contrat');
         $assurance = "'NoCrashProtec'";
 
-        $car->bookingCar($userId, $carId, $startLoc, $endLoc, $assurance);
+        $car->bookingCar($userId, $carId, $startLoc, $endLoc, $assurance, $contrat);
         return view('reservation');
     }
 }
