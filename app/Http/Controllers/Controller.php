@@ -31,7 +31,17 @@ class Controller extends BaseController
         return view('detail')->with('oneCar', $oneCar);
     }
 
-    public function locateCar()
+    public function locateCar(Request $request)
     {
+        $car = new Car();
+
+        $userId = auth()->id();
+        $voiturId = $request->input('idVehicule');
+        $debutLoc = $request->input('debutLocation');
+        $finLoc = $request->input('finLocation');
+        $contrat = $request->input('contrat');
+        
+        $car->bookingCar($userId, $voiturId, $debutLoc, $finLoc);
+        return view('reservation');
     }
 }

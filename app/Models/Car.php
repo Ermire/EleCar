@@ -28,12 +28,12 @@ class Car extends Model
             ->join('typevehicule', 'vehicule.typeVehicule_idtypeVehicule', '=', 'typevehicule.idtypeVehicule')
             ->join('classe', 'vehicule.classe_IdClasse', '=', 'classe.classeId')
             ->select('*')
-            ->where('vehiculeId', '=', $id );
+            ->where('vehiculeId', '=', $id);
         return $car->get();
     }
 
-    public function bookingCar($idVoiture, $idUtilisateur)
+    public function bookingCar($idVoiture, $idUtilisateur, $locDepart, $locRetour)
     {
-        $booking = DB::insert('insert into location (utilisateur_idUtilisateur, vehicule_idVehicule) values ('.$idVoiture.', '.$idUtilisateur.')', [1, 'Dayle']);
+        DB::insert('insert into location (utilisateur_idUtilisateur, vehicule_idVehicule, locDateDepart, locDateRetour, locAssurance ) values (' . $idVoiture . ', ' . $idUtilisateur . ', ' . $locDepart . ', ' . $locRetour . ', "NoCasseProtec")');
     }
 }
