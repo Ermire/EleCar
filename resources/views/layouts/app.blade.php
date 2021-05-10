@@ -19,6 +19,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/font_awesome_5.12.js') }}"></script>
     <script src="{{ asset('js/jquery-3.5.1.slim.min.js') }}"></script>
+
 </head>
 
 <body class="font-sans antialiased">
@@ -29,6 +30,12 @@
         <header class="bg-white shadow">
 
         </header>
+        <br>
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
 
         <!-- Page Content -->
         <main>

@@ -40,4 +40,5 @@ Route::get('/detail', 'App\Http\Controllers\Controller@showDetailCar')->name('de
 Route::post('/reservation', function () {})->middleware(['auth'])->name('reservation');
 Route::post('/reservation', 'App\Http\Controllers\Controller@locateCar')->name('reservation');
 
+
 require __DIR__ . '/auth.php';

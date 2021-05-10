@@ -43,6 +43,7 @@ class Controller extends BaseController
         $assurance = "'NoCrashProtec'";
 
         $car->bookingCar($userId, $carId, $startLoc, $endLoc, $assurance, $contrat);
-        return view('reservation');
+        //return view('reservation');
+        return redirect()->route('dashboard')->with('status', 'La réservation de votre location a bien été enregistrée !');
     }
 }
