@@ -36,12 +36,13 @@ class Controller extends BaseController
         $car = new Car();
 
         $userId = auth()->id();
-        $voiturId = $request->input('idVehicule');
-        $debutLoc = $request->input('debutLocation');
-        $finLoc = $request->input('finLocation');
+        $carId = $request->input('idVehicule');
+        $startLoc = $request->input('debutLocation');
+        $endLoc = $request->input('finLocation');
         $contrat = $request->input('contrat');
-        
-        $car->bookingCar($userId, $voiturId, $debutLoc, $finLoc);
+        $assurance = "'NoCrashProtec'";
+
+        $car->bookingCar($userId, $carId, $startLoc, $endLoc, $assurance);
         return view('reservation');
     }
 }

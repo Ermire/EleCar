@@ -32,8 +32,8 @@ class Car extends Model
         return $car->get();
     }
 
-    public function bookingCar($idVoiture, $idUtilisateur, $locDepart, $locRetour)
+    public function bookingCar($idUser, $idCar, $locStart, $locReturn, $assurance)
     {
-        DB::insert('insert into location (utilisateur_idUtilisateur, vehicule_idVehicule, locDateDepart, locDateRetour, locAssurance ) values (' . $idVoiture . ', ' . $idUtilisateur . ', ' . $locDepart . ', ' . $locRetour . ', "NoCasseProtec")');
+        DB::insert('insert into location (utilisateur_idUtilisateur, vehicule_idVehicule, locDateDepart, locDateRetour, locAssurance ) values (' . $idUser . ', ' . $idCar . ', ' . $locStart . ', ' . $locReturn . ', ' . $assurance . ')');
     }
 }
