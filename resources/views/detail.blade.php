@@ -52,6 +52,13 @@
                         <option>Location avec option d'achat </option>
                     </select>
                     <br>
+                    <x-label :value="__('Choissisez une assurance')" />
+                    <select id="assurance">
+                        <option value=""> -- Selectionnez une option </option>
+                        <option>Basique </option>
+                        <option>Tout risque</option>
+                    </select>
+                    <br>
                     <div class="mt-4">
                         <p>Prix de la location : <span class="bold">{{ $voiture->vehiculePrixLoc }} €</span></p>
                     </div>

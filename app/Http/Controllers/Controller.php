@@ -30,7 +30,7 @@ class Controller extends BaseController
         $oneCar = $car->getCarDetail($id);
         return view('detail')->with('oneCar', $oneCar);
     }
-
+    
     public function locateCar(Request $request)
     {
         $car = new Car();
@@ -40,10 +40,11 @@ class Controller extends BaseController
         $startLoc = $request->input('debutLocation');
         $endLoc = $request->input('finLocation');
         $contrat = $request->input('contrat');
-        $assurance = "'NoCrashProtec'";
+        $assurance = $request->input('assurance');
 
         $car->bookingCar($userId, $carId, $startLoc, $endLoc, $assurance, $contrat);
         //return view('reservation');
         return redirect()->route('dashboard')->with('status', 'La réservation de votre location a bien été enregistrée !');
     }
+    
 }

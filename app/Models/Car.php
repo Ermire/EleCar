@@ -37,8 +37,17 @@ class Car extends Model
     {
         DB::insert('insert into location (utilisateur_idUtilisateur, vehicule_idVehicule, locDateDepart, locDateRetour, locAssurance ) values (' . $idUser . ', ' . $idCar . ', "' . $locStart . '", "' . $locReturn . '", ' . $assurance . ')');
         DB::table('vehicule')
-        ->where('vehiculeId', $idCar)
-        ->update(['voitureEnLocation' => 1]);
+            ->where('vehiculeId', $idCar)
+            ->update(['voitureEnLocation' => 1]);
     }
-    
+
+    public function addCar()
+    {
+        $car = DB::table('vehicule')
+            ->join('marque', 'vehicule.marque_IdMarque', '=', 'marque.marqueId')
+            ->join('typevehicule', 'vehicule.typeVehicule_idtypeVehicule', '=', 'typevehicule.idtypeVehicule')
+            ->join('classe', 'vehicule.classe_IdClasse', '=', 'classe.classeId')
+            ->select('*');
+        return $car->get();
+    }
 }
