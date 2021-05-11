@@ -51,4 +51,8 @@ class Controller extends BaseController
         return redirect()->route('dashboard')->with('status', 'La réservation de votre location a bien été enregistrée !');
     }
     
+    public function addCar(Request $request){
+        $car = new Car();
+        
+    }
 }
