@@ -8,6 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use App\Models\Car;
+use App\Models\User;
 
 class Controller extends BaseController
 {
@@ -16,9 +17,12 @@ class Controller extends BaseController
     public function index()
     {
         $car = new Car();
+        $user = new User();
 
+        $userId = auth()->id();
+        $userType = $user->getUserType($userId);
         $listCar = $car->getCar();
-        return view('dashboard')->with('listCar', $listCar);
+        return view('dashboard')->with('listCar', $listCar, 'userType', $userType);
     }
 
     public function showDetailCar(Request $request)
