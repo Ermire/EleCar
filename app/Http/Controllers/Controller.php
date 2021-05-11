@@ -41,7 +41,7 @@ class Controller extends BaseController
         $endLoc = $request->input('finLocation');
         $contrat = $request->input('contrat');
         $assurance = $request->input('assurance');
-
+        
         $car->bookingCar($userId, $carId, $startLoc, $endLoc, $assurance, $contrat);
         //return view('reservation');
         return redirect()->route('dashboard')->with('status', 'La réservation de votre location a bien été enregistrée !');

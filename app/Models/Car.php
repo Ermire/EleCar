@@ -35,7 +35,7 @@ class Car extends Model
 
     public function bookingCar($idUser, $idCar, $locStart, $locReturn, $assurance, $contrat)
     {
-        DB::insert('insert into location (utilisateur_idUtilisateur, vehicule_idVehicule, locDateDepart, locDateRetour, locAssurance ) values (' . $idUser . ', ' . $idCar . ', "' . $locStart . '", "' . $locReturn . '", ' . $assurance . ')');
+        DB::insert('insert into location (utilisateur_idUtilisateur, vehicule_idVehicule, locDateDepart, locDateRetour, locAssurance ) values (' . $idUser . ', ' . $idCar . ', "' . $locStart . '", "' . $locReturn . '", "' . $assurance . '")');
         DB::table('vehicule')
             ->where('vehiculeId', $idCar)
             ->update(['voitureEnLocation' => 1]);

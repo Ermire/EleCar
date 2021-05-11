@@ -45,18 +45,18 @@
                     </div>
                     <br>
                     <x-label :value="__('Choissisez un type de contrat')" />
-                    <select id="contrat">
+                    <select name="contrat">
                         <option value=""> -- Selectionnez une option </option>
-                        <option>Location </option>
-                        <option>Location grande durée</option>
-                        <option>Location avec option d'achat </option>
+                        <option value="loc">Location </option>
+                        <option value="lgd">Location grande durée</option>
+                        <option value="loa">Location avec option d'achat </option>
                     </select>
                     <br>
                     <x-label :value="__('Choissisez une assurance')" />
-                    <select id="assurance">
+                    <select name="assurance">
                         <option value=""> -- Selectionnez une option </option>
-                        <option>Basique </option>
-                        <option>Tout risque</option>
+                        <option value="basique">Basique </option>
+                        <option value="tout_risque">Tout risque</option>
                     </select>
                     <br>
                     <div class="mt-4">
