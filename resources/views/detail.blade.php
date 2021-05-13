@@ -57,7 +57,7 @@
                     <input type="hidden" name="idVehicule" value="{{ $voiture->vehiculeId }}">
                     <div class="mt-4">
                         <center>
-                            <button class="buttonBook">
+                            <button class="buttonBook" id="validForm">
                                 {{ __('Réserver') }}
                             </button>
                         </center>
