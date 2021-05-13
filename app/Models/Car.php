@@ -41,7 +41,7 @@ class Car extends Model
             ->update(['voitureEnLocation' => 1]);
     }
 
-    public function addCar()
+    public function addNewCar()
     {
         $car = DB::table('vehicule')
             ->join('marque', 'vehicule.marque_IdMarque', '=', 'marque.marqueId')
