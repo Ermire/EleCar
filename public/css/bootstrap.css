@@ -231,12 +231,8 @@ sup {
 }
 
 a {
-    color: #000000 !important;
-    font-size: 15px !important;
-}
-
-a:hover {
     color: #000000;
+    font-size: 15px !important;
 }
 
 a:not([href]):not([class]),

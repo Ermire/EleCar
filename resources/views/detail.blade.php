@@ -60,7 +60,7 @@
                     <form action="/checkbox-example" method="POST">
                             @csrf
                             <input type="checkbox" name="terms">
-                            <label>Je reconnais avoir lu les termes et conditions</label><br/><br/>
+                            <label>Je reconnais avoir lu les termes et conditions</label><a class = "redstar">*</a><br/><br/>
                             <button type=submit class="buttonBook" id="validForm">
                                 {{ __('Réserver') }}
                             </button>
