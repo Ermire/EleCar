@@ -44,14 +44,6 @@
                             :value="old('finLocation')" required />
                     </div>
                     <br>
-                    <x-label :value="__('Choissisez un type de contrat')" />
-                    <select name="contrat">
-                        <option value=""> -- Selectionnez une option </option>
-                        <option value="loc">Location </option>
-                        <option value="lgd">Location grande durée</option>
-                        <option value="loa">Location avec option d'achat </option>
-                    </select>
-                    <br>
                     <x-label :value="__('Choissisez une assurance')" />
                     <select name="assurance">
                         <option value=""> -- Selectionnez une option </option>

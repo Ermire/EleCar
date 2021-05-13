@@ -22,7 +22,7 @@ class Controller extends BaseController
         $userId = auth()->id();
         $userType = $user->getUserType($userId);
         $listCar = $car->getCar();
-        return view('dashboard')->with('listCar', $listCar, 'userType', $userType);
+        return view('dashboard')->with('listCar', $listCar)->with('userType', $userType);
     }
 
     public function showDetailCar(Request $request)
