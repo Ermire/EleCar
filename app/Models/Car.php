@@ -41,8 +41,22 @@ class Car extends Model
             ->update(['voitureEnLocation' => 1]);
     }
 
-    public function addNewCar()
+    public function classeCar()
     {
-        $car = DB::insert('insert into location ()');
+        $car = DB::table('classe')
+            ->select('*');
+        return $car->get();
+    }
+
+    public function marqueCar()
+    {
+        $car = DB::table('marque')
+            ->select('*');
+        return $car->get();
+    }
+
+    public function addNewCar($modelCar, $etatCar, $kmCar, $anneeCar, $descriptionCar, $prixCar)
+    {
+        DB::insert('insert into location (vehiculeModele, vehiculeEtat, vehiculeKm, vehiculeAnnee, vehiculeDesc, vehiculePrixLoc, typeVehicule_idtypeVehicule, marque_idMarque, classe_idClasse, vehiculeImage, voitureEnLocation)values (' . $modelCar . ', ' . $etatCar . ',' . $kmCar . ',' . $anneeCar . ',' . $descriptionCar . ',' . $prixCar . ')');
     }
 }
