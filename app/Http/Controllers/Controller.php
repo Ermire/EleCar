@@ -43,16 +43,23 @@ class Controller extends BaseController
         $carId = $request->input('idVehicule');
         $startLoc = $request->input('debutLocation');
         $endLoc = $request->input('finLocation');
-        $contrat = $request->input('contrat');
         $assurance = $request->input('assurance');
         
-        $car->bookingCar($userId, $carId, $startLoc, $endLoc, $assurance, $contrat);
+        $car->bookingCar($userId, $carId, $startLoc, $endLoc, $assurance);
         //return view('reservation');
         return redirect()->route('dashboard')->with('status', 'La réservation de votre location a bien été enregistrée !');
     }
     
     public function addCar(Request $request){
         $car = new Car();
-        
+
+        $etatCar = $request->input('etat');
+        $modelCar = $request->input('modele');
+        $kmCar = $request->input('kilometrage');
+        $anneeCar = $request->input('annee');
+        $descriptionCar = $request->input('description');
+        $prixCar = $request->input('prix');
+
+        $car->addNewCar();
     }
 }
