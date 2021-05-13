@@ -44,6 +44,9 @@ class Controller extends BaseController
         $startLoc = $request->input('debutLocation');
         $endLoc = $request->input('finLocation');
         $assurance = $request->input('assurance');
+        $request->validate([
+            'terms' => 'accepted'
+            ]);
         
         $car->bookingCar($userId, $carId, $startLoc, $endLoc, $assurance);
         //return view('reservation');

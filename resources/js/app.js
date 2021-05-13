@@ -9,6 +9,6 @@ $('#ref_form').validate({
     rules: {
         'debutLocation': { required: true },
         'finLocation': { required: true },
-        'assurance'
     }
+
 })

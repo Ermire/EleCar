@@ -46,7 +46,6 @@
                     <br>
                     <x-label :value="__('Choissisez une assurance')" />
                     <select name="assurance">
-                        <option value=""> -- Selectionnez une option </option>
                         <option value="basique">Basique </option>
                         <option value="tout_risque">Tout risque</option>
                     </select>
@@ -55,12 +54,18 @@
                         <p>Prix de la location : <span class="bold">{{ $voiture->vehiculePrixLoc }} €</span></p>
                     </div>
                     <input type="hidden" name="idVehicule" value="{{ $voiture->vehiculeId }}">
-                    <div class="mt-4">
-                        <center>
-                            <button class="buttonBook" id="validForm">
+                    <!--<div>
+                        <label><?php echo "<input type='checkbox'";?> &nbsp; <?= __("<a> J'accepte et reconnais avoir lu les termes et conditions</a>")?></label>
+                    </div>-->
+                    <form action="/checkbox-example" method="POST">
+                            @csrf
+                            <input type="checkbox" name="terms">
+                            <label>Je reconnais avoir lu les termes et conditions</label><br/><br/>
+                            <button type=submit class="buttonBook" id="validForm">
                                 {{ __('Réserver') }}
                             </button>
-                        </center>
+                    </form>
+                    <div class="mt-4">
                     </div>
                 </form>
             </div>
