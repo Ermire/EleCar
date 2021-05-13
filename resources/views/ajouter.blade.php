@@ -33,6 +33,17 @@
             <label> Prix de location : </label>
             <input type="text" id="prix" pattern="[0-9]" title="Uniquement des chiffres">
             <br>
+            <select name="classe">
+                @foreach ($listClasse as $classe)
+                <option value="{{$classe->classeLibelle}}"> {{$classe->classeLibelle}} </option>
+                @endforeach
+            </select>
+            <br>
+            <select name="marque">
+                @foreach ($listMarque as $marque)
+                <option value="{{$marque->marqueLibelle}}"> {{$marque->marqueLibelle}} </option>
+                @endforeach
+            </select>
 
             <input type="submit">
         </form>

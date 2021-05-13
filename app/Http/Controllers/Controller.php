@@ -34,7 +34,7 @@ class Controller extends BaseController
         $oneCar = $car->getCarDetail($id);
         return view('detail')->with('oneCar', $oneCar);
     }
-    
+
     public function locateCar(Request $request)
     {
         $car = new Car();
@@ -46,14 +46,23 @@ class Controller extends BaseController
         $assurance = $request->input('assurance');
         $request->validate([
             'terms' => 'accepted'
-            ]);
-        
+        ]);
+
         $car->bookingCar($userId, $carId, $startLoc, $endLoc, $assurance);
         //return view('reservation');
         return redirect()->route('dashboard')->with('status', 'La réservation de votre location a bien été enregistrée !');
     }
-    
-    public function addCar(Request $request){
+
+    public function retrieveCarParameters()
+    {
+        $car = new Car();
+        $listClasse = $car->classeCar();
+        $listMarque = $car->marqueCar();
+        return view('ajouter')->with('listClasse', $listClasse)->with('listMarque', $listMarque);
+    }
+
+    public function addCar(Request $request)
+    {
         $car = new Car();
 
         $etatCar = $request->input('etat');
@@ -63,6 +72,6 @@ class Controller extends BaseController
         $descriptionCar = $request->input('description');
         $prixCar = $request->input('prix');
 
-        $car->addNewCar();
+        $car->addNewCar($etatCar, $modelCar, $kmCar, $anneeCar, $descriptionCar, $prixCar);
     }
 }
