@@ -14,7 +14,7 @@
 
             <br>
 
-            <label> Saisissez le model </label>
+            <label> Saisissez le modèle </label>
             <input type="text" id="modele">
         </form>
         

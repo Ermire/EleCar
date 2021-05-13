@@ -43,7 +43,6 @@ Route::post('/reservation', 'App\Http\Controllers\Controller@locateCar')->name('
 Route::get('/ajouter', function () {
     return view('ajouter');
 })->middleware(['auth'])->name('ajouter');
-Route::get('/ajouter', 'App\Http\Controllers\Controller@showDetailCar')->name('ajouter');
 
 Route::post('/ajout', function () {})->middleware(['auth'])->name('ajout');
 Route::post('/ajout', 'App\Http\Controllers\Controller@addCar')->name('ajout');

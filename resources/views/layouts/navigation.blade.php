@@ -27,15 +27,6 @@
                         {{ __('Nous contacter') }}
                     </x-nav-link>
                 </div>
-
-                @if ($userType = 1)
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('ajouter')" :active="request()->routeIs('ajouter')">
-                        {{ __('Ajouter une voiture') }}
-                    </x-nav-link>
-                </div>
-                @endif
-
             </div>
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
