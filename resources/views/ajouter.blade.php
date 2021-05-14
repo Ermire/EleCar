@@ -23,7 +23,7 @@
             <br>
 
             <label> Année du véhicule : </label>
-            <input type="text" id="annee" pattern="[0-9]" title="Uniquement des chiffres">
+            <input type="text" id="annee" title="Uniquement des chiffres">
             <br>
 
             <label> Saisissez une description : </label>
@@ -31,7 +31,7 @@
             <br>
 
             <label> Prix de location : </label>
-            <input type="text" id="prix" pattern="[0-9]" title="Uniquement des chiffres">
+            <input type="text" id="prix"  title="Uniquement des chiffres">
             <br>
             <select name="classe">
                 @foreach ($listClasse as $classe)
@@ -45,6 +45,13 @@
                 @endforeach
             </select>
 
+            <select name="type">
+                <option value="electrique">electrique </option>
+                <option value="hybride">hybride</option>
+            </select>
+            <br>
+            <input type="file">
+            <br>
             <input type="submit">
         </form>
 

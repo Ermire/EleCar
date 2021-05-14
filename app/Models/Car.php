@@ -55,8 +55,8 @@ class Car extends Model
         return $car->get();
     }
 
-    public function addNewCar($modelCar, $etatCar, $kmCar, $anneeCar, $descriptionCar, $prixCar)
+    public function addNewCar($modelCar, $etatCar, $kmCar, $anneeCar, $descriptionCar, $prixCar, $marqueCar, $classeCar, $typeCar)
     {
-        DB::insert('insert into location (vehiculeModele, vehiculeEtat, vehiculeKm, vehiculeAnnee, vehiculeDesc, vehiculePrixLoc, typeVehicule_idtypeVehicule, marque_idMarque, classe_idClasse, vehiculeImage, voitureEnLocation)values (' . $modelCar . ', ' . $etatCar . ',' . $kmCar . ',' . $anneeCar . ',' . $descriptionCar . ',' . $prixCar . ')');
+        DB::insert('insert into location (vehiculeModele, vehiculeEtat, vehiculeKm, vehiculeAnnee, vehiculeDesc, vehiculePrixLoc, typeVehicule_idtypeVehicule, marque_idMarque, classe_idClasse, vehiculeImage, voitureEnLocation)values (' . $modelCar . ', ' . $etatCar . ',' . $kmCar . ',' . $anneeCar . ',' . $descriptionCar . ',' . $prixCar . ',' . $typeCar . ',' . $marqueCar . ',' . $classeCar . ')');
     }
 }

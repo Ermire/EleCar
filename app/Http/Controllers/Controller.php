@@ -71,7 +71,10 @@ class Controller extends BaseController
         $anneeCar = $request->input('annee');
         $descriptionCar = $request->input('description');
         $prixCar = $request->input('prix');
+        $classeCar = $request->input('classe');
+        $marqueCar = $request->input('marque');
+        $typeCar = $request->input('typeCar');
 
-        $car->addNewCar($etatCar, $modelCar, $kmCar, $anneeCar, $descriptionCar, $prixCar);
+        $car->addNewCar($etatCar, $modelCar, $kmCar, $anneeCar, $descriptionCar, $prixCar, $classeCar, $marqueCar);
     }
 }
