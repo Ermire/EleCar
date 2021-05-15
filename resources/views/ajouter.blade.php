@@ -2,7 +2,8 @@
     <div class="detailBlock">
 
         <p> Ajoutez une voiture : </p>
-        <form method="POST" action="{{ route('ajout') }}">
+        <form method="POST" action="{{ route('ajout') }}" enctype="multipart/form-data">
+            @csrf
             <select name="etat">
                 <option value=""> -- Selectionnez un etat </option>
                 <option value="1">1 </option>
@@ -15,44 +16,44 @@
             <br>
 
             <label> Saisissez le modèle : </label>
-            <input type="text" id="modele">
+            <x-input type="text" id="modele" name="modele"/>
             <br>
 
             <label> Saisissez le nombre de kilométrage : </label>
-            <input type="text" id="kilometre">
+            <x-input type="number" id="kilometre" name="kilometre"/>
             <br>
 
             <label> Année du véhicule : </label>
-            <input type="text" id="annee" title="Uniquement des chiffres">
+            <x-input type="number" id="annee" title="Uniquement des chiffres"/>
             <br>
 
             <label> Saisissez une description : </label>
-            <input type="text" id="description">
+            <x-input type="text" id="description" name="description"/>
             <br>
 
             <label> Prix de location : </label>
-            <input type="text" id="prix"  title="Uniquement des chiffres">
+            <x-input type="text" id="prix" name="prix" title="Uniquement des chiffres"/>
             <br>
             <select name="classe">
                 @foreach ($listClasse as $classe)
-                <option value="{{$classe->classeLibelle}}"> {{$classe->classeLibelle}} </option>
+                    <option value="{{ $classe->classeId }}"> {{ $classe->classeLibelle }} </option>
                 @endforeach
             </select>
             <br>
             <select name="marque">
                 @foreach ($listMarque as $marque)
-                <option value="{{$marque->marqueLibelle}}"> {{$marque->marqueLibelle}} </option>
+                    <option value="{{ $marque->marqueId }}"> {{ $marque->marqueLibelle }} </option>
                 @endforeach
             </select>
-
+            <br>
             <select name="type">
-                <option value="electrique">electrique </option>
-                <option value="hybride">hybride</option>
+                <option value="1">electrique </option>
+                <option value="2">hybride</option>
             </select>
             <br>
-            <input type="file">
+            <x-input type="file" id="image" name="image"/>
             <br>
-            <input type="submit">
+            <x-input type="submit"/>
         </form>
 
     </div>

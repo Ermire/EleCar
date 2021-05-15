@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use App\Models\Car;
@@ -64,17 +65,22 @@ class Controller extends BaseController
     public function addCar(Request $request)
     {
         $car = new Car();
-
+        
         $etatCar = $request->input('etat');
         $modelCar = $request->input('modele');
-        $kmCar = $request->input('kilometrage');
+        $kmCar = $request->input('kilometre');
         $anneeCar = $request->input('annee');
         $descriptionCar = $request->input('description');
         $prixCar = $request->input('prix');
         $classeCar = $request->input('classe');
         $marqueCar = $request->input('marque');
-        $typeCar = $request->input('typeCar');
+        $typeCar = $request->input('type');
+        
+        $nomImage = $modelCar.'.jpg';
+        $imageCar = $request->file('image');
+        $request->image->storeAs('images', $nomImage, 'public');
 
-        $car->addNewCar($etatCar, $modelCar, $kmCar, $anneeCar, $descriptionCar, $prixCar, $classeCar, $marqueCar);
+        $car->addNewCar($etatCar, $modelCar, $kmCar, $anneeCar, $descriptionCar, $prixCar, $classeCar, $marqueCar, $typeCar, $nomImage);
+        return redirect()->route('dashboard')->with('status', 'La voiture a bien été ajoutée !');
     }
 }
