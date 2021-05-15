@@ -24,7 +24,7 @@
             <br>
 
             <label> Année du véhicule : </label>
-            <x-input type="number" id="annee" title="Uniquement des chiffres"/>
+            <x-input type="number" id="annee" name="annee" title="Uniquement des chiffres"/>
             <br>
 
             <label> Saisissez une description : </label>
