@@ -23,11 +23,6 @@ Route::get('/account', function () {
     return view('account');
 })->middleware(['auth'])->name('account');
 
-
-Route::get('/offre', function () {
-    return view('offre');
-})->middleware(['auth'])->name('offre');
-
 Route::get('/contact', function () {
     return view('contact');
 })->middleware(['auth'])->name('contact');
