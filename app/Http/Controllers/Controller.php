@@ -65,7 +65,7 @@ class Controller extends BaseController
     public function addCar(Request $request)
     {
         $car = new Car();
-        
+
         $etatCar = $request->input('etat');
         $modelCar = $request->input('modele');
         $kmCar = $request->input('kilometre');
@@ -75,13 +75,12 @@ class Controller extends BaseController
         $classeCar = $request->input('classe');
         $marqueCar = $request->input('marque');
         $typeCar = $request->input('type');
-        
-        $nomImage = $modelCar.'.jpg';
+
+        $nomImage = $modelCar . '.jpg';
         $imageCar = $request->file('image');
         $imageCar->storeAs('', $nomImage, 'custom');
 
-
-        $car->addNewCar($modelCar, $etatCar, $kmCar, $anneeCar, $descriptionCar, $prixCar, $classeCar, $marqueCar, $typeCar, $nomImage);
+        $car->addNewCar($modelCar, $etatCar, $kmCar, $anneeCar, $descriptionCar, $prixCar, $marqueCar, $classeCar, $typeCar, $nomImage);
         return redirect()->route('dashboard')->with('status', 'La voiture a bien été ajoutée !');
     }
 }
