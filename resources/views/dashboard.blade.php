@@ -15,7 +15,7 @@
     </div>
     @foreach ($userType as $user)
         @if ($user->utilisateurType == 1)
-            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <x-nav-link :href="route('ajouter')" :active="request()->routeIs('ajouter')">
                     {{ __('Ajouter une voiture') }}
                 </x-nav-link>

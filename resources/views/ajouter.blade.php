@@ -1,4 +1,5 @@
 <x-app-layout>
+    <center>
     <div class="detailBlock">
 
         <p> Ajoutez une voiture : </p>
@@ -13,48 +14,49 @@
                 <option value="5">5 </option>
             </select>
 
-            <br>
+            <br><br>
 
             <label> Saisissez le modèle : </label>
             <x-input type="text" id="modele" name="modele"/>
-            <br>
+            <br><br>
 
             <label> Saisissez le nombre de kilométrage : </label>
             <x-input type="number" id="kilometre" name="kilometre"/>
-            <br>
+            <br><br>
 
             <label> Année du véhicule : </label>
             <x-input type="number" id="annee" name="annee" title="Uniquement des chiffres"/>
-            <br>
+            <br><br>
 
             <label> Saisissez une description : </label>
             <x-input type="text" id="description" name="description"/>
-            <br>
+            <br><br>
 
             <label> Prix de location : </label>
             <x-input type="text" id="prix" name="prix" title="Uniquement des chiffres"/>
-            <br>
+            <br><br>
             <select name="classe">
                 @foreach ($listClasse as $classe)
                     <option value="{{ $classe->classeId }}"> {{ $classe->classeLibelle }} </option>
                 @endforeach
             </select>
-            <br>
+            <br><br>
             <select name="marque">
                 @foreach ($listMarque as $marque)
                     <option value="{{ $marque->marqueId }}"> {{ $marque->marqueLibelle }} </option>
                 @endforeach
             </select>
-            <br>
+            <br><br>
             <select name="type">
                 <option value="1">electrique </option>
                 <option value="2">hybride</option>
             </select>
-            <br>
+            <br><br>
             <x-input type="file" id="image" name="image"/>
             <br>
             <x-input type="submit"/>
         </form>
 
     </div>
+    </center>
 </x-app-layout>
