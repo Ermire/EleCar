@@ -62,6 +62,12 @@ class Controller extends BaseController
         return view('ajouter')->with('listClasse', $listClasse)->with('listMarque', $listMarque);
     }
 
+    public function userInfos(){
+        $user = new User();
+        $userInfos = $user->getUser();
+        return view('account')->with('userInfos', $userInfos);
+    }
+
     public function addCar(Request $request)
     {
         $car = new Car();

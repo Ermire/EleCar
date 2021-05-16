@@ -22,6 +22,7 @@ Route::get('/dashboard', 'App\Http\Controllers\Controller@index')->name('dashboa
 Route::get('/account', function () {
     return view('account');
 })->middleware(['auth'])->name('account');
+Route::get('/account', 'App\Http\Controllers\Controller@userInfos')->name('account');
 
 Route::get('/contact', function () {
     return view('contact');

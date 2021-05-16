@@ -70,4 +70,10 @@ class User extends Authenticatable
             ->select('utilisateurType');
         return $user->get();
     }
+
+    public function getUser(){
+        $user = DB::table('utilisateur')
+        ->select('*');
+        return $user->get();
+    }
 }
