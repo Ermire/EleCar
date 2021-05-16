@@ -52,6 +52,10 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
         ],
 
+        'custom' => [
+            'driver' => 'local',
+            'root' => 'img',
+        ],
     ],
 
     /*

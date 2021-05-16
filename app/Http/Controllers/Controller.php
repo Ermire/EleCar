@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Http\UploadedFile;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use App\Models\Car;
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 
 class Controller extends BaseController
 {
@@ -78,7 +78,8 @@ class Controller extends BaseController
         
         $nomImage = $modelCar.'.jpg';
         $imageCar = $request->file('image');
-        $imageCar->storeAs('img', $nomImage, 'public');
+        $imageCar->storeAs('', $nomImage, 'custom');
+
 
         $car->addNewCar($modelCar, $etatCar, $kmCar, $anneeCar, $descriptionCar, $prixCar, $classeCar, $marqueCar, $typeCar, $nomImage);
         return redirect()->route('dashboard')->with('status', 'La voiture a bien été ajoutée !');
