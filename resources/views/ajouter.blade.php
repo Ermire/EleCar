@@ -44,27 +44,27 @@
             <p class="titleDetail">Prix de la location : <p>
             <x-input type="text" id="prix" name="prix" title="Uniquement des chiffres"/>
             <br>
-            <p class="titleDetail">Choissisez la classe : <p>
+            <p class="titleDetail">Classe du véhicule : <p>
             <select name="classe">
                 @foreach ($listClasse as $classe)
                     <option value="{{ $classe->classeId }}"> {{ $classe->classeLibelle }} </option>
                 @endforeach
             </select>
             <br>
-            <p class="titleDetail">Choissisez la marque : <p>
+            <p class="titleDetail">Marque du véhicule : <p>
             <select name="marque">
                 @foreach ($listMarque as $marque)
                     <option value="{{ $marque->marqueId }}"> {{ $marque->marqueLibelle }} </option>
                 @endforeach
             </select>
             <br>
-            <p class="titleDetail">Choissisez le type : <p>
+            <p class="titleDetail">Type du véhicule : <p>
             <select name="type">
                 <option value="1">Électrique </option>
                 <option value="2">Hybride</option>
             </select>
             <br>
-            <p class="titleDetail">Image du véhicule : <p>
+            <br>
             <x-input type="file" id="image" name="image"/>
             <br>
             <br>
@@ -74,6 +74,5 @@
         </form>
         </div>
     </div>
-    <br>
-    <br>
+    <br><br>
 </x-app-layout>

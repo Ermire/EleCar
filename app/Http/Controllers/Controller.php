@@ -78,9 +78,9 @@ class Controller extends BaseController
         
         $nomImage = $modelCar.'.jpg';
         $imageCar = $request->file('image');
-        $request->image->storeAs('images', $nomImage, 'public');
+        $imageCar->storeAs('img', $nomImage, 'public');
 
-        $car->addNewCar($etatCar, $modelCar, $kmCar, $anneeCar, $descriptionCar, $prixCar, $classeCar, $marqueCar, $typeCar, $nomImage);
+        $car->addNewCar($modelCar, $etatCar, $kmCar, $anneeCar, $descriptionCar, $prixCar, $classeCar, $marqueCar, $typeCar, $nomImage);
         return redirect()->route('dashboard')->with('status', 'La voiture a bien été ajoutée !');
     }
 }
