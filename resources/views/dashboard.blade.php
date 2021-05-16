@@ -13,6 +13,7 @@
             </div>
         </div>
     </div>
+        <div class="carBlock">
     @foreach ($userType as $user)
         @if ($user->utilisateurType == 1)
             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -22,7 +23,7 @@
             </div>
         @endif
     @endforeach
-
+        </div>
     <div class="carBlock">
         @foreach ($listCar as $voiture)
             <div class="card">
